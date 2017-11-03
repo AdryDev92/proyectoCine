@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="helpers.js" ></script>
+<script src="conf.js" ></script>
+<script src="Pelicula.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagina de edicion</title>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="" class="navbar-brand">Página de edición</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#validacion">Validación</a></li>
+            <li><a href="#editActor">Comprobar actor</a></li>
+            <li><a href="#editDirector">Comprobar director</a></li>
+            <li><a href="#funcExtra1">Función extra 1</a></li>
+            <li><a href="#funcExtra2">Función extra 2</a></li>
+        </ul>
+    </div>
+</nav>
+
+<form class="horizontal-form" action="" method="post">
+    <div class="form-group container">
+        <input type="text" placeholder="Introducir película" class="form-control col-xs-2" id="nombre">
+        <span class="help-block">La validación aparecerá por consola. Para ello haz clic derecho > Inspeccionar elemento</span>
+        <input type="submit" class="btn btn-primary">
+    </div>
+    <br>
+    <div class="form-group container">
+        <input type="text" placeholder="Comprobar actor" class="form-control col-xs-2" id="editActor">
+        <input type="submit" class="btn btn-primary">
+    </div>
+    <div class="form-group container">
+        <input type="text" placeholder="Comprobar director" class="form-control col-xs-2" id="editDirector">
+        <input type="submit" class="btn btn-primary">
+    </div>
+    <div class="form-group container">
+        <input type="text" placeholder="Funcion extra 1" class="form-control col-xs-2" id="funcExtra1">
+        <input type="submit" class="btn btn-primary">
+    </div>
+    <div class="form-group container">
+        <input type="text" placeholder="Funcion extra 2" class="form-control col-xs-2" id="funcExtra2">
+        <input type="submit" class="btn btn-primary">
+    </div>
+
+</form>
+
+</body>
+</html>
