@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/app.css">
+
+  </head>
+	
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Peliculas</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Inicio</a></li>
+            <li><a href="paginadebusqueda.html">Pagina de busqueda </a></li>
+            <li><a href="paginadeedicion.html">Pagina de edicion </a></li>
+            <li><a href="paginadegestion.html">Pagina de gestion </a></li>
+            <li><a href="paginadelusuario.html">Pagina del usuario </a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+        
+    
+        
+
+		<h1 align="center"> 4. Opiniones del usuario </h1>
+		<h4> 4.1 Apartado de valoracion y creacion de comentario. </h4>
+
+		 <div class="form-group">
+            <label for="busquedausuario">Usuario : </label>
+            <select class="form-control" name="busquedausuario" id="busquedausuario">
+                <option value="1">fran</option>
+                <option value="2">manolo</option>
+                <option value="3">alvaro</option>
+                <option value="4">antonio</option>
+            </select>
+        </div>
+
+		<div class="form-group">
+            <label for="peliculabuscada">Pelicula : </label>
+            <input type="text" class="form-control" name="peliculabuscada" id="peliculabuscada"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="nota">Nota : </label>
+            <select class="form-control" name="nota" id="nota">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+		
+        <div class="form-group">
+            <label for="Comentario">Comentario : </label>
+            <textarea class="form-control" name="Comentario" id="Comentario" rows="6"></textarea>
+        </div>
+
+        <div class="form-group">
+ 			<button class="btn btn-primary" onclick="valoracion()"> Enviar</button>
+        </div>
+    
+    <br>
+
+        <div class="form-group">
+        	<h4> 4.2 Obtener todas las votaciones que a hecho un usuario </h4>
+		
+        <div class="form-group">
+            <label for="comentariosusuario">Nombre del usuario : </label>
+            <input type="text" class="form-control" name="comentariosusuario" id="comentariosusuario" ></textarea>
+        </div>
+
+        <div class="form-group">
+			<button class="btn btn-primary" onclick=""> Enviar</button>
+        </div>
+    
+	<br>
+
+        <div class="form-group">
+        	<h4> 4.3 funcion para optener los usuarios que han votado a la mismo tipo(genero) de peliculas </h4>
+		
+        <div class="form-group">
+            <label for="busquedaporgenero">Genero : </label>
+            <select class="form-control" name="busquedaporgenero" id="busquedaporgenero">
+                <option value="terror">terror</option>
+                <option value="accion">accion</option>
+                <option value="ciencia_ficcion">ciencia_ficcion</option>
+                <option value="comedia">comedia</option>
+                <option value="romantica">romantica</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary" onclick=""> Enviar</button>
+        </div>
+    
+        <div class="form-group">
+            <label for="nombrepeli">Nombre de la pelicula : </label>
+            <input type="text" class="form-control" name="nombrepeli" id="nombrepeli" ></textarea>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary" onclick="buscarnombre()"> Enviar</button>
+        </div>
+
+</div>
+
+<script type="text/javascript" src="js/Clases.js"></script>
+<script type="text/javascript" src="js/paginadelusuario.js"></script>
+
+</body>
+</html>

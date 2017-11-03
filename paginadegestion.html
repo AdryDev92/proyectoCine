@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/app.css">
+
+  </head>
+  
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Peliculas</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Inicio</a></li>
+            <li><a href="paginadebusqueda.html">Pagina de busqueda </a></li>
+            <li><a href="paginadeedicion.html">Pagina de edicion </a></li>
+            <li><a href="paginadegestion.html">Pagina de gestion </a></li>
+            <li><a href="paginadelusuario.html">Pagina del usuario </a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+        
+
+    <h1 align="center">Funciones de Gestión de Películas</h1>
+    <h4>FUNCION 1: Devuelve las 10 películas con más reparto.</h4>
+    <div class="group-control" id="function1">
+        <label for="string" class="from-control"> </label>
+        <button class="btn btn-primary" name="string" id="string" onclick="topFilms()">Enviar</button>
+    </div>
+    <br>
+
+    <h4>FUNCION 2: Devuelve la mejor película.</h4>
+        <div class="form-group">
+            <label for="Generoelegido">Genero : </label>
+            <textarea class="form-control" name="Generoelegido" id="Generoelegido"></textarea>
+            <button class="btn btn-primary" onclick="mejorpelicula()">Enviar</button>
+        </div>
+  	<br>
+
+    <h4>FUNCION 3: Ordenar las películas por puntuación o fecha de emisión.</h4>
+    <div class="group-control" id="function3">
+        <label for="string3" class="from-control"></label>
+
+        <span>Selecciona una opción: <select name="selectOrder" id="selectOrder">
+            <option value="score" id="score" name="score" selected>Puntuación</option>
+            <option value="name" id="date" name="date">Fecha de Emisión</option>
+        </select>
+        </span>
+        <br><br>
+        <button class="btn btn-primary" name="string3" id="string3" onclick="ordenarporpuntuacion()">Enviar</button>
+    </div>
+
+<script type="text/javascript" src="js/Clases.js"></script>
+<script type="text/javascript" src="js/gestiondepeliculas.js"></script>
+
+
+</body>
+</html>
