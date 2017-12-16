@@ -10,3 +10,26 @@ body{
 	color: red;
 }
 
+.inputError{
+	border: 2px solid red;
+}
+
+.mensajeError{
+	background-color: red;
+	color: white;
+}
+
+.inputCorrect{
+	border: 2px solid green;
+}
+
+.mensajeCorrect{
+	background-color: green;
+	color: white;
+}
+
+.thead {
+	border: solid black 1px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}

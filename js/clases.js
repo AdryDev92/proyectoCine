@@ -9,7 +9,6 @@ class Pelicula{
         this.descripcion = descripcion;
         this.duracion = duracion;
         this.puntuacion = puntuacion;
-        this.valoracion = valoracion;
     }
 }
 
@@ -44,7 +43,7 @@ let infantiles = new Genero("infantiles");
 let misterio = new Genero("misterio");
 
 let arrayPeliculas = [
-    new Pelicula("matrix",["ciencia_ficcion"],"Lilly Wachowski","Keanu Reeves","1999","junio","Muy Buena","60 min","5"),
+    new Pelicula("matrix",["ciencia_ficcion"],"lilly wachowski","Keanu Reeves","1999","junio","Muy Buena","60 min","5"),
     new Pelicula("matrix reloaded",["ciencia_ficcion"],"Lilly Wachowski","Keanu Reeves","2001","junio","Muy Buena","120 min","5"),
     new Pelicula("elfrancotirador",["accion"],"Clint Eastwood","Bradley Cooper", "2014","febrero","Muy buena","90 min","4"),
     new Pelicula("blade",["comedia"],"Stephen Norrington","Wesley Snipes","1998","mayo","Normalita","60 min","3"),
