@@ -2,6 +2,8 @@
 
 Proyecto con temática de cine programado en `HTML5`, `CSS3`, `Javascript` y `bootstrap`. Hecho por Alberto, Jose Antonio, Sergio y Adrian.
 
+![commits](https://img.shields.io/badge/commits-13-blue.svg)
+
 ---
 ## ¿En qué consiste el proyecto?
 Éste proyecto se basa en una aplicación del lado del cliente que nos provee de información sobre películas de cine, géneros, su reparto de actores, directores, etc.
