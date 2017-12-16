@@ -142,7 +142,7 @@ function sortFilm() {
 
       // Comprueba si el array esta vacío.
       if (arraygender.length === 0) {
-        alert("No existe ningun juego de este gender")
+        alert("No existe ninguna película de este género.")
       } else {
         if (sorts === "puntuación") {
           // Envía a la función showFilms para que imprima el array.
