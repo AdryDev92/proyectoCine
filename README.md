@@ -2,12 +2,9 @@
 
 Proyecto con temática de cine programado en `HTML5`, `CSS3`, `Javascript` y `bootstrap`. Hecho por Alberto, Jose Antonio, Sergio y Adrian.
 
-#### Specs ![commits](https://img.shields.io/badge/commits-25-blue.svg) ![functions](https://img.shields.io/badge/functions-incomplete-red.svg) ![responsive](https://img.shields.io/badge/responsive-running-green.svg?colorB=00C106) ![clases](https://img.shields.io/badge/clases-complete-green.svg?colorB=00C106) ![techs](https://img.shields.io/badge/techs-javascript%20HTML%20css-orange.svg) ![data_type](https://img.shields.io/badge/data%20type-revised-green.svg?colorB=00C106)
+#### Specs ![commits](https://img.shields.io/badge/commits-26-blue.svg) ![functions](https://img.shields.io/badge/functions-incomplete-red.svg) ![responsive](https://img.shields.io/badge/responsive-running-green.svg?colorB=00C106) ![clases](https://img.shields.io/badge/clases-complete-green.svg?colorB=00C106) ![techs](https://img.shields.io/badge/techs-javascript%20HTML%20css-orange.svg) ![data_type](https://img.shields.io/badge/data%20type-revised-green.svg?colorB=00C106)
 
-#### Branches ![search](https://img.shields.io/badge/search-complete-green.svg?colorB=00C106)
-![management](https://img.shields.io/badge/management-complete-green.svg?colorB=00C106)
-![edition](https://img.shields.io/badge/edition-incomplete-red.svg)
-![user](https://img.shields.io/badge/user-incomplete-red.svg)
+#### Branches ![search](https://img.shields.io/badge/search-complete-green.svg?colorB=00C106) ![management](https://img.shields.io/badge/management-complete-green.svg?colorB=00C106) ![edition](https://img.shields.io/badge/edition-incomplete-red.svg) ![user](https://img.shields.io/badge/user-incomplete-red.svg)
 
 ---
 ## ¿En qué consiste el proyecto?
