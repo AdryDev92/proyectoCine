@@ -2,7 +2,8 @@
 
 Proyecto con temática de cine programado en `HTML5`, `CSS3`, `Javascript` y `bootstrap`. Hecho por Alberto, Jose Antonio, Sergio y Adrian.
 
-![commits](https://img.shields.io/badge/commits-13-blue.svg)
+![commits](https://img.shields.io/badge/commits-13-blue.svg) ![functions](https://img.shields.io/badge/functions-incomplete-red.svg) ![responsive](https://img.shields.io/badge/responsive-running-green.svg?colorB=00C106)
+![clases](https://img.shields.io/badge/clases-complete-green.svg?colorB=00C106)
 
 ---
 ## ¿En qué consiste el proyecto?
