@@ -1,74 +1,163 @@
-/**
- * Devuelve las 10 películas con más reparto.
- */
+let arrayFilmsCopy = arrayFilms;                        // Se copia el arrayFilms a otro para evitar la modificacion del array principal
+let showFilms;                                          // Variable que se usa para asignarle una función
+
+let errorGenero = "El género introducido no existe";    // Muestra "El género introducido no existe".
+
+//Funcion 1: Devuelve las 10 películas con más personas trabajando en ella.
 function topFilms() {
-    let genero = arrayPeliculas.find
-    (x => x.genero === document.getElementById("inputGenero1").value.toLocaleLowerCase().trim());
+  //Recibe el dato del input genero.
+  let genero = collectData("#inputGeneroFuncion1");
+  let inputGenero = $('#inputGeneroFuncion1');
+  
+  let arraygenero = [];   //Array para guardar las películas por género si se especifica.
+  let h3 = $("#h3Funcion1");
 
-    let arrayGenero = [];
-    if (genero === "" || genero === undefined || genero === null) {
-        console.log(arrayPeliculas.sort(orderFilms()), 10);
-    } else {
-        for (let i = 0; i < arrayPeliculas.length; i++) {
-            if (arrayPeliculas[i].genero.toLowerCase().trim() === genero) {
-                arrayGenero[arrayGenero.length] = arrayPeliculas[i];
+  // Si el género es undefined mostrará todas las películas.
+  if (!validateData(genero)) {
+
+    // Envia a la función showFilms para que imprima el array
+    createTable(arrayFilmsCopy.sort((x, y) => y.name.length - x.name.length).slice(0, 10), ["nombre", "género", "director", "actores", "año", "mes", "descripción", "duración", "puntuación"], false);
+
+    // Si no, usará las películas del género.
+  } else {
+
+    if (ifExiste("género", genero)) {
+
+      $("#inputGeneroFuncion1").addClass("inputCorrect");
+
+      // Añade al arraygenero todas las películas con ese género.
+      for (valueArrayFilms of arrayFilmsCopy) {
+        for (value in valueArrayFilms) {
+          if (value === "género") {
+
+            // Comprueba si hay alguna película con el genero indicado
+            if (valueArrayFilms[value] === genero) {
+
+              // Añade la película al array específico.
+              arraygenero[arraygenero.length] = valueArrayFilms;
             }
+          }
+
         }
-        console.log(arrayGenero.sort(orderFilms()), 10);
+      }
+      // Comprueba si el array esta vacío.
+      if (arraygenero.length === 0) {
+        alert("No existe ninguna película de este género.")
+      } else {
+        // Envía a la función showFilms para que imprima el array.
+        createTable(arraygenero.sort((x, y) => y.genero.length - x.genero.length).slice(0, 10), ["nombre", "género", "director", "actores", "año", "mes", "descripción", "duración", "puntuación"], false);
+
+        printError(inputGenero, "", "", h3, false);
+      }
+    } else {
+      printError(inputGenero, errorGenero, "", h3, true);
     }
+  }
 }
 
-/**
- * Devuelve la mejor película.
- * @param x
- * @param y
- */
-function orderFilms(x, y) {
-    x.films.length < y.films.length;
-}
-
+// Función 2: Muestra la película con mayor puntuacion de todas o de un genero concreto, si hay varias películas con la máxima puntuación se mostrará por orden alfabético.
 function bestFilm() {
-    let genero = arrayPeliculas.find(x => x.genero === document.getElementById("inputGenero2").value.toLocaleLowerCase().trim());
-    let arrayGenero = [];
-    if (genero === "" || genero === undefined || genero === null) {
-        console.log(arrayPeliculas.sort(orderScore()), 1);
-    } else {
-        for (let i = 0; i < arrayPeliculas.length; i++) {
-            if (arrayPeliculas[i].genero.toLowerCase().trim() === genero) {
-                arrayGenero[arrayGenero.length] = arrayPeliculas[i];
+  //Recibe el dato del input genero.
+  let genero = collectData("#inputGeneroFuncion2");
+  let inputGenero = $('#inputGeneroFuncion2');
+  
+  let arraygenero = [];   //Array para guardar las películas por género si se especifica.
+  let h3 = $("#h3Funcion2");
+
+  // Si el género es undefined mostrará todas las películas.
+  if (genero === "" || genero === undefined || genero === null) {
+
+    // Envía a la función showFilms para que imprima el array.
+    createTable(arrayFilmsCopy.sort(sortRating).slice(0, 1), ["nombre", "género", "director", "actores", "año", "mes", "descripción", "duración", "puntuación"], false);
+
+    // Si no, usará las películas del género.
+  } else {
+
+    if (ifExiste("género", genero)) {
+      // Añade al arraygenero todas las películas con ese género.
+      for (valueArrayFilms of arrayFilmsCopy) {
+        for (value in valueArrayFilms) {
+          if (value === "género") {
+
+            // Comprueba si hay alguna película con el género introducido.
+            if (valueArrayFilms[value] === genero) {
+
+              //Añade la película al array específico.
+              arraygenero[arraygenero.length] = valueArrayFilms;
             }
+          }
         }
-        console.log(arrayGenero.sort(orderScore()), 1);
+      }
+      //Comprueba si el array está vacío.
+      if (arraygenero.length === 0) {
+        alert("No existe ninguna película de este género")
+      } else {
+        // Envía a la función showFilms para que imprima el array
+        createTable(arraygenero.sort(sortRating).slice(0, 1), ["nombre", "género", "director", "actores", "año", "mes", "descripción", "duración", "puntuación"], false);
+
+        printError(inputGenero, "", "", h3, false);
+      }
+    } else {
+      printError(inputGenero, errorGenero, "", h3, true);
     }
+  }
 }
 
-function orderScore(x, y) {
-    x.puntuacion.length < y.puntuacion.length;
-}
-
+//Funcion 3: Debe ordenar las películas por puntuación o por fecha de emisión.
 function sortFilm() {
-    let genero = arrayPeliculas.find(x => x.genero === document.getElementById("inputGenero3").value.toLocaleLowerCase().trim());
-    let order = arrayPeliculas.find(x => x.selectOrder === document.getElementById("selectOrder").value.toLocaleLowerCase().trim());
-    let arrayGenero = [];
+  //Recibe el dato del input genero
+  let genero = collectData("#inputGeneroFuncion3");
+  let sorts = collectData("#selectNombrePuntuacionFuncion3");           // Coge el dato elegido en el select
+    
+  let arraygenero = [];                                                 // Array para guardar las películas por género si se especifica
+  let h3 = $("#h3Funcion3");
+  let inputGender = $('#inputGeneroFuncion3');
 
-    if (genero === "" || genero === undefined || genero === null) {
-        if (order === "puntuación") {
-            console.log(arrayPeliculas.sort(orderScore()));
-        } else {
-            console.log(arrayPeliculas.sort());
-        }
+  if (genero === "" || genero === undefined || genero === null) {
+    if (sorts === "puntuación") {
+      //Envia a la funcion showFilms para que imprima el array
+      createTable(arrayFilmsCopy.sort(sortRating), ["nombre", "género", "director", "actores", "año", "mes", "descripción", "duración", "puntuación"], false);
     } else {
-        for (let i = 0; i < arrayPeliculas.length; i++) {
-            if (arrayPeliculas[i].genero.toLowerCase().trim() === genero) {
-                arrayGenero[arrayGenero.length] = arrayPeliculas[i];
-            }
-        }
-        if (order === "puntuación") {
-            console.log(arrayPeliculas.sort(orderScore()));
-        } else {
-            console.log(arrayGenero.sort());
-        }
+      //Envia a la funcion showFilms para que imprima el array
+      createTable(arrayFilmsCopy.sort(sortName), ["nombre", "género", "director", "actores", "año", "mes", "descripción", "duración", "puntuación"], false);
     }
+  } else {
+
+    if (ifExiste("género", genero)) {
+        
+      for (valueArrayFilms of arrayFilmsCopy) {
+        for (value in valueArrayFilms) {
+          if (value === "género") {
+
+            // Comprueba si hay alguna película con el género indicado.
+            if (valueArrayFilms[value] === genero) {
+
+              //Añade película al array específico.
+              arraygenero[arraygenero.length] = valueArrayFilms;
+            }
+          }
+
+        }
+      }
+
+      // Comprueba si el array esta vacío.
+      if (arraygender.length === 0) {
+        alert("No existe ningun juego de este gender")
+      } else {
+        if (sorts === "puntuación") {
+          // Envía a la función showFilms para que imprima el array.
+          createTable(arraygenero.sort(sortRating), ["nombre", "género", "director", "actores", "año", "mes", "descripción", "duración", "puntuación"], false);
+
+          printError(inputGender, "", "", h3, false);
+        } else {
+          // Envía a la función showFilms para que imprima el array.
+          createTable(arraygenero.sort(sortName), ["nombre", "género", "director", "actores", "año", "mes", "descripción", "duración", "puntuación"], false);
+
+          printError(inputGenero, "", "", h3, false);
+        }
+      }
+    } else {
+        printError(inputGender, errorGenero, "", h3, true);
+    }
+  }
 }
-
-
