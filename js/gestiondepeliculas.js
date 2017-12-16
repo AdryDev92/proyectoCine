@@ -111,7 +111,7 @@ function sortFilm() {
     
   let arraygenero = [];                                                 // Array para guardar las películas por género si se especifica
   let h3 = $("#h3Funcion3");
-  let inputGender = $('#inputGeneroFuncion3');
+  let inputGenero = $('#inputGeneroFuncion3');
 
   if (genero === "" || genero === undefined || genero === null) {
     if (sorts === "puntuación") {
@@ -141,14 +141,14 @@ function sortFilm() {
       }
 
       // Comprueba si el array esta vacío.
-      if (arraygender.length === 0) {
+      if (arraygenero.length === 0) {
         alert("No existe ninguna película de este género.")
       } else {
         if (sorts === "puntuación") {
           // Envía a la función showFilms para que imprima el array.
           createTable(arraygenero.sort(sortRating), ["nombre", "género", "director", "actores", "año", "mes", "descripción", "duración", "puntuación"], false);
 
-          printError(inputGender, "", "", h3, false);
+          printError(inputGenero, "", "", h3, false);
         } else {
           // Envía a la función showFilms para que imprima el array.
           createTable(arraygenero.sort(sortName), ["nombre", "género", "director", "actores", "año", "mes", "descripción", "duración", "puntuación"], false);
@@ -157,7 +157,7 @@ function sortFilm() {
         }
       }
     } else {
-        printError(inputGender, errorGenero, "", h3, true);
+        printError(inputGenero, errorGenero, "", h3, true);
     }
   }
 }
